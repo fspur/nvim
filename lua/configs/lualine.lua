@@ -69,14 +69,7 @@ ins_left {
   cond = conditions.buffer_not_empty,
 }
 
-ins_left {
-  'filename',
-  cond = conditions.buffer_not_empty,
-  color = { fg = colors.blue, gui = 'bold' },
-}
-
 ins_left { 'location' }
-
 ins_left { 'progress' }
 
 ins_left {
@@ -117,11 +110,10 @@ ins_left {
   color = { colors.blue },
 }
 
--- Add components to right sections
 ins_right {
-  'o:encoding', -- option component same as &encoding in viml
-  cond = conditions.hide_in_width,
-  color = { fg = colors.green },
+  'filetype',
+  icons_enabled = true,
+  colored = true,
 }
 
 ins_right {
@@ -131,14 +123,8 @@ ins_right {
     dos = ' dos',  -- e70f
     mac = ' mac',  -- e711
   },
-  colored = true,
+  color = { fg = colors.blue },
   icons_enabled = true,
-}
-
-ins_right {
-  'filetype',
-  icons_enabled = true,
-  colored = true,
 }
 
 ins_right {
@@ -146,6 +132,13 @@ ins_right {
   icon = '',
   color = { fg = colors.blue },
 }
+
+ins_right {
+  'o:encoding',
+  cond = conditions.hide_in_width,
+  color = { fg = colors.green },
+}
+
 
 ins_right {
   'diff',
