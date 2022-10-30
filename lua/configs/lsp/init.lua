@@ -34,13 +34,13 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-require'lspconfig'.solargraph.setup{ on_attach = on_attach, }
-require'lspconfig'.gopls.setup{ on_attach = on_attach, }
-require'lspconfig'.pyright.setup{ on_attach = on_attach, }
-require'lspconfig'.bashls.setup{ on_attach = on_attach, }
-require'lspconfig'.jsonls.setup{ on_attach = on_attach, }
-require'lspconfig'.yamlls.setup{ on_attach = on_attach, }
-require'lspconfig'.sumneko_lua.setup{ on_attach = on_attach, }
+lspconfig.solargraph.setup{ on_attach = on_attach, }
+lspconfig.gopls.setup{ on_attach = on_attach, }
+lspconfig.pyright.setup{ on_attach = on_attach, }
+lspconfig.bashls.setup{ on_attach = on_attach, }
+lspconfig.jsonls.setup{ on_attach = on_attach, }
+lspconfig.yamlls.setup{ on_attach = on_attach, }
+lspconfig.sumneko_lua.setup{ on_attach = on_attach, }
 
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
