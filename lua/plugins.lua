@@ -63,7 +63,14 @@ for _, plugin in pairs(disabled_built_ins) do
 end
 
 return require('packer').startup(function()
-	use { 'wbthomason/packer.nvim' }
+	use {
+        'wbthomason/packer.nvim'
+    }
+
+    use {
+        'fspur/nord.nvim',
+		config = [[require('configs.colorscheme')]],
+    }
 
 	use {
 		"neovim/nvim-lspconfig",
@@ -75,9 +82,11 @@ return require('packer').startup(function()
 		config = [[require('configs.treesitter')]]
 	}
 
-	-- use { 'nvim-lua/popup.nvim' }
-	use { 'nvim-lua/plenary.nvim' }
-	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use {
+        'nvim-lua/plenary.nvim'
+    }
+
+	-- use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use {
 		'nvim-telescope/telescope.nvim',
 		config = [[require('configs.telescope')]],
@@ -97,22 +106,44 @@ return require('packer').startup(function()
 		end
 	}
 
+    use {
+       'kdheepak/tabline.nvim',
+       requires = {
+             { 'nvim-lualine/lualine.nvim'},
+             { 'kyazdani42/nvim-web-devicons' }
+       },
+	   config = [[require('configs.tabline')]]
+    }
+
 	use {
 		'lewis6991/gitsigns.nvim',
-		config = [[require('configs.gitsigns')]] 
+		config = [[require('configs.gitsigns')]]
 	}
 
- 	use { 'EdenEast/nightfox.nvim',
-		config = [[require('configs.colorscheme')]] 
-	} 
+    use {
+        'tpope/vim-fugitive',
+    }
+
+ 	use {
+        'sindrets/diffview.nvim'
+    }
+
+ 	use {
+        'jose-elias-alvarez/null-ls.nvim',
+	}
+
+    use {
+		"lukas-reineke/indent-blankline.nvim",
+		config = [[require('configs.indentline')]],
+	}
 
 	use { 
 		'nvim-lualine/lualine.nvim',
-		config = [[require('configs.lualine')]] 
+		config = [[require('configs.lualine')]]
 	}
 
 	use {
-		'akinsho/bufferline.nvim', 
+		'akinsho/bufferline.nvim',
 		config = [[require('configs.bufferline')]],
 		requires = 'kyazdani42/nvim-web-devicons',
 	}

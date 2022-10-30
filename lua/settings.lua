@@ -1,6 +1,7 @@
+COLORSCHEME = 'nord'
+
 vim.o.backspace = 'indent,eol,start'
 vim.o.backup = false
-vim.o.clipboard = 'unnamedplus'
 vim.o.completeopt = 'menuone,noselect,noinsert'
 vim.o.cursorcolumn = ualse
 vim.o.cursorline = true
@@ -25,10 +26,10 @@ vim.o.splitright = true
 vim.o.swapfile = false
 vim.o.tabstop = 4
 vim.o.title = true
-vim.o.undofile = true
 vim.o.updatetime = 50
 vim.o.wrap = false
 vim.opt.colorcolumn = "80"
 vim.opt.showtabline = 0 
 vim.opt.smartindent = true
 vim.opt.termguicolors = true
+-- vim.o.clipboard = 'unnamedplus'

@@ -1,4 +1,5 @@
-local colorscheme = "nordfox"
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. COLORSCHEME)
 
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then return end
+if not status_ok then
+    vim.cmd([[colorscheme slate]])
+end

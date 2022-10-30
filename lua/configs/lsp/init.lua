@@ -40,6 +40,7 @@ require'lspconfig'.pyright.setup{ on_attach = on_attach, }
 require'lspconfig'.bashls.setup{ on_attach = on_attach, }
 require'lspconfig'.jsonls.setup{ on_attach = on_attach, }
 require'lspconfig'.yamlls.setup{ on_attach = on_attach, }
+require'lspconfig'.sumneko_lua.setup{ on_attach = on_attach, }
 
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
