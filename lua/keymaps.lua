@@ -104,3 +104,4 @@ vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", {silent = t
 
 vim.api.nvim_set_keymap("n", "<leader>df", ":DiffviewOpen<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>dc", ":DiffviewClose<CR>", opts)
+

@@ -92,28 +92,20 @@ return require('packer').startup(function()
 		config = [[require('configs.telescope')]],
 	}
 
- 	use {
- 		'terrortylor/nvim-comment',
- 		config = [[require('configs.comment')]]
- 	}
+    use {
+        'numToStr/Comment.nvim',
+		config = function()
+			require("Comment").setup()
+		end
+    }
 
 	use {
 		"folke/trouble.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 		config = function()
-			require("trouble").setup {
-			}
+			require("trouble").setup()
 		end
 	}
-
-    use {
-       'kdheepak/tabline.nvim',
-       requires = {
-             { 'nvim-lualine/lualine.nvim'},
-             { 'kyazdani42/nvim-web-devicons' }
-       },
-	   config = [[require('configs.tabline')]]
-    }
 
 	use {
 		'lewis6991/gitsigns.nvim',
