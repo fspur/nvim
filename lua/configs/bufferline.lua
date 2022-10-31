@@ -19,7 +19,7 @@ bufferline.setup {
         truncate_names = true,
         diagnostics = "nvim_lsp",
         numbers = function(opts)
-            return string.format('%s·%s', opts.raise(opts.id), opts.lower(opts.ordinal))
+            return string.format('%s', opts.raise(opts.id))
         end,
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
             if context.buffer:current() then
