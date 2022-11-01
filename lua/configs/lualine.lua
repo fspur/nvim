@@ -6,13 +6,13 @@ local hide_in_width = function()
 end
 
 local diagnostics = {
-  "diagnostics",
-  sources = { "nvim_diagnostic" },
-  sections = { "error", "warn" },
-  symbols = { error = " ", warn = " " },
-  colored = false,
-  update_in_insert = true,
-  always_visible = true,
+    "diagnostics",
+    sources = { "nvim_diagnostic" },
+    sections = { "error", "warn" },
+    symbols = { error = " ", warn = " " },
+    colored = true,
+    update_in_insert = true,
+    always_visible = true
 }
 
 local treesitter = {
@@ -52,9 +52,9 @@ local lsp = {
       end
     end
     if not next(t) then
-      return " No LSP "
+      return "No LSP"
     end
-    return "  " .. (table.concat(t, ", ") or "No LSP")
+    return " " .. (table.concat(t, ", ") or "No LSP")
   end,
   color = { gui = "bold" },
   cond = hide_in_width,
@@ -70,11 +70,10 @@ lualine.setup {
     always_divide_middle = true,
   },
   sections = {
-    lualine_a = { 'mode', diagnostics },
-    lualine_b = { 'branch', treesitter },
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', treesitter, diagnostics },
     lualine_c = { lsp, diff },
     lualine_x = {
-            {"filename", },
             {"filetype", },
             {
                 "fileformat",

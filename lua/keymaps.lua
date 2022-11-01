@@ -3,23 +3,14 @@ local opts = { noremap = true, silent = true }
 local nvim_keymap = vim.api.nvim_set_keymap
 local vim_keymap = vim.keymap.set 
 
+-- get active buffer path
+nvim_keymap('n', '<leader>gp', ":lua print(vim.fn.expand('%:p'))<CR>", opts)
+
 -- Clear highlights
 nvim_keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
 nvim_keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
-
--- Better paste
-nvim_keymap("v", "p", '"_dP', opts)
-
--- Insert --
--- Press jk fast to enter
-nvim_keymap("i", "kj", "<ESC>", opts)
-
--- Visual --
--- Stay in indent mode
-nvim_keymap("v", "<", "<gv", opts)
-nvim_keymap("v", ">", ">gv", opts)
 
 -- better moving keys
 nvim_keymap('n', '<C-h>', ':wincmd h<CR>', {silent = true})
